@@ -68,13 +68,13 @@ echo "
 
 timedatectl
 
-mkfs.ext4 "/dev/${driveName}2"
-mkfs.fat -F 32 "/dev/${driveName}1"
+echo "y\n" | mkfs.ext4 "/dev/${driveName}2"
+echo "y\n" | mkfs.fat -F 32 "/dev/${driveName}1"
 mount "/dev/${driveName}2" /mnt
 mkdir /mnt/boot
 mount "/dev/${driveName}1" /mnt/boot
 
-pacstrap -K /mnt base linux-zen linux-firmware nano networkmanager efibootgmr grub man python-pip git npm nodejs xfce4 base-devel gcc fish sudo gdm plymouth
+pacstrap -K /mnt base linux-zen linux-firmware nano networkmanager efibootgmr grub man python-pip git npm nodejs xfce4 base-devel gcc fish sudo gdm plymouth --noconfirm
 
 
 echo "
