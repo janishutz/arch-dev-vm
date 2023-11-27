@@ -47,6 +47,9 @@ ${pwd}
 EOD
 usermod -aG wheel arch-is-best
 
+rm -rf /home/arch-is-best/arch-dev-vm
+mv /root/arch-dev-vm/* /home/arch-is-best/arch-dev-vm
+
 echo "
 
 ==> New user created! Please enter the password for the new user to switch to it
@@ -54,56 +57,11 @@ to finish up setup
 
 "
 
-chmod 777 /home/arch-is-best/vscode-extensions
+chmod 777 /home/arch-is-best/arch-dev-vm/vscode-extensions
 
-su arch-is-best
-
-
-echo "
-
-==> Setup complete, adding config files to new user plus some other config
-
-"
-
-cd /tmp
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-
-echo "
-
-==> AUR helper installed
-
-"
-
-read -p "Do you want to have a barebone (b) or complete (c) install? " installType
-
-if [[ "$installType" != "c" ]]; then
-    yay -Syu --noconfirm nodejs npm rustup kate python-pip gcc
-fi
-
-yay -Syu --noconfirm vscodium
+su arch-is-best -c /home/arch-is-best/arch-dev-vm/userland.sh
 
 
-mkdir /home/arch-is-best/.config
-
-mv /home/arch-is-best/arch-dev-vm/config/* /home/arch-is-best/.config
-
-file="/home/arch-is-best/vscode-extensions"
-while read line; do
-    vscodium --install-extension "${line}"
-done < "${file}"
-
-echo "
-
-==> We now need to change the shell to a more user-friendly one.
-Please enter your password again
-
-"
-
-chsh -s /bin/fish
-
-exit
 
 echo "
 
