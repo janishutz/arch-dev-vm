@@ -46,6 +46,7 @@ sleep 2
 
 
 wipefs -a "/dev/$driveName"
+sleep 2
 echo -e "
 g
 n
