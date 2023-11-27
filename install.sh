@@ -96,7 +96,7 @@ echo "
 
 sleep 2
 
-cp ~/arch-dev-vm /mnt/root/arch-dev-vm/
+cp -r ~/arch-dev-vm /mnt/root/
 
 arch-chroot /mnt /root/chroot.sh
 
