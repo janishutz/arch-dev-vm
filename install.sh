@@ -23,7 +23,7 @@ echo "
 ==> We have listed all drives connected to your PC above.
 "
 
-read -p "Please select the VM's drive by typing the name shown: " driveName
+read -p "Please select the VM's drive by typing the name shown (usually vda): " driveName
 
 if [[ -z "$driveName" ]]; then
     echo "Your drive name is invalid."
@@ -58,7 +58,7 @@ n
 a
 1
 w
-q"
+q" | fdisk "/dev/$driveName"
 
 echo "
 
@@ -74,7 +74,7 @@ mount "/dev/${driveName}2" /mnt
 mkdir /mnt/boot
 mount "/dev/${driveName}1" /mnt/boot
 
-pacstrap -K /mnt base linux-zen linux-firmware nano networkmanager efibootgmr grub man python-pip git npm node xfce4 base-devel gcc fish sudo gdm plymouth
+pacstrap -K /mnt base linux-zen linux-firmware nano networkmanager efibootgmr grub man python-pip git npm nodejs xfce4 base-devel gcc fish sudo gdm plymouth
 
 
 echo "
