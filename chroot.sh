@@ -117,5 +117,7 @@ Now, once you are ready, press enter to open the file
 
 visudo
 
+systemctl enable gdm.service
+
 
 exit
