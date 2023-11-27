@@ -31,8 +31,16 @@ makepkg -si
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=ARCH
 grub-mkconfig -o /boot/grub/grub.cfg
 
+echo "
+
+==> Bootloader set up.
+
+"
+
+read -p "Do you want to have a barebone (b) or complete (c) install? " installType
+
 if [[ "$installType" != "c" ]]; then
-    yay -Syu --noconfirm nodejs npm rustup kate python-pip 
+    yay -Syu --noconfirm nodejs npm rustup kate python-pip gcc
 fi
 
 yay -Syu --noconfirm vscodium

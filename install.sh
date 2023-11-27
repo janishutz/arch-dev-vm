@@ -30,8 +30,6 @@ if [[ -z "$driveName" ]]; then
     exit 1
 fi
 
-read -p "Do you want to have a barebone (b) or complete (c) install? " installType
-
 read -p "Do you really want to install (y/N) " doProceed
 
 if [[ "$doProceed" != "y" ]]; then
@@ -77,7 +75,7 @@ mount "/dev/${driveName}2" /mnt
 mkdir /mnt/boot
 mount "/dev/${driveName}1" /mnt/boot
 
-pacstrap -K /mnt base linux-zen linux-firmware nano networkmanager efibootmgr grub man git xfce4 base-devel gcc fish sudo gdm plymouth --noconfirm
+pacstrap -K /mnt base linux-zen linux-firmware nano networkmanager efibootmgr grub man git xfce4 base-devel fish sudo gdm plymouth --noconfirm
 
 
 echo "
