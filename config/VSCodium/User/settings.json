@@ -1,0 +1,27 @@
+{
+    "diffEditor.ignoreTrimWhitespace": false,
+    "explorer.confirmDragAndDrop": false,
+    "git.autofetch": true,
+    "workbench.preferredHighContrastColorTheme": "Material Theme Darker High Contrast",
+    "workbench.colorTheme": "Material Theme Darker High Contrast",
+    "git.enableSmartCommit": true,
+    "latex-utilities.countWord.format": "${wordsBody} Words",
+    "editor.fontFamily": "'Source Code Pro'",
+    "gitMerger.customCommitMessage": true,
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "update.mode": "none",
+    "workbench.enableExperiments": false,
+    "workbench.startupEditor": "none",
+    "workbench.iconTheme": "eq-material-theme-icons-darker",
+    "ltex.language": "en-GB",
+    "[tex]": {
+        "editor.wordWrap": "bounded",
+        "editor.wordWrapColumn": 200
+    },
+    "[latex]": {
+        "editor.wordWrap": "bounded",
+        "editor.wordWrapColumn": 200
+    }
+}
