@@ -74,7 +74,7 @@ mount "/dev/${driveName}2" /mnt
 mkdir /mnt/boot
 mount "/dev/${driveName}1" /mnt/boot
 
-pacstrap -K /mnt base linux-zen linux-firmware nano networkmanager efibootgmr grub man python-pip git npm nodejs xfce4 base-devel gcc fish sudo gdm plymouth --noconfirm
+pacstrap -K /mnt base linux-zen linux-firmware nano networkmanager efibootmgr grub man python-pip git npm nodejs xfce4 base-devel gcc fish sudo gdm plymouth --noconfirm
 
 
 echo "
