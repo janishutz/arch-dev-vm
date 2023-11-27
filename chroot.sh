@@ -9,7 +9,7 @@ hwclock --systohc
 locale-gen
 
 echo "LANG=en_GB.UTF-8" > /etc/locale.conf
-echo "KEYMAP=de_CH.latin1" > /etc/vconsole.conf
+echo "KEYMAP=de_CH-latin1" > /etc/vconsole.conf
 echo "arch-dev-vm" > /etc/hostname
 
 echo "
@@ -23,11 +23,6 @@ sleep 2
 mkinitcpio -P
 plymouth-set-default-theme -R script
 
-cd /tmp
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=ARCH
 grub-mkconfig -o /boot/grub/grub.cfg
 
@@ -37,14 +32,6 @@ echo "
 
 "
 
-read -p "Do you want to have a barebone (b) or complete (c) install? " installType
-
-if [[ "$installType" != "c" ]]; then
-    yay -Syu --noconfirm nodejs npm rustup kate python-pip gcc
-fi
-
-yay -Syu --noconfirm vscodium
-
 echo "
 
 ==> Creating new user, please choose a password once prompted!
@@ -53,9 +40,12 @@ echo "
 
 read -p "Choose a password: " pwd
 
-useradd -m arch-is-the-best
-echo "$pwd" | passwd arch-is-the-best --stdin
-usermod -aG wheel arch-is-the-best
+useradd -m arch-is-best
+passwd arch-is-best << EOD
+${pwd}
+${pwd}
+EOD
+usermod -aG wheel arch-is-best
 
 echo "
 
@@ -75,6 +65,26 @@ echo "
 ==> Setup complete, adding config files to new user plus some other config
 
 "
+
+cd /tmp
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+
+echo "
+
+==> AUR helper installed
+
+"
+
+read -p "Do you want to have a barebone (b) or complete (c) install? " installType
+
+if [[ "$installType" != "c" ]]; then
+    yay -Syu --noconfirm nodejs npm rustup kate python-pip gcc
+fi
+
+yay -Syu --noconfirm vscodium
+
 
 mkdir /home/arch-is-best/.config
 

@@ -95,9 +95,10 @@ echo "
 
 sleep 2
 
-cp -r ~/arch-dev-vm /mnt/root/
+mkdir /mnt/root
+cp -r ~/arch-dev-vm /mnt/root/arch-dev-vm/
 
-arch-chroot /mnt /root/chroot.sh
+arch-chroot /mnt /root/arch-dev-vm/chroot.sh
 
 # Chroot is running
 
