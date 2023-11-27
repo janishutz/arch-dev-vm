@@ -54,7 +54,6 @@ to finish up setup
 
 "
 
-mv /root/arch-dev-vm/ /home/arch-is-best
 chmod 777 /home/arch-is-best/vscode-extensions
 
 su arch-is-best
