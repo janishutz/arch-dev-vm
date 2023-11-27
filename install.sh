@@ -55,8 +55,6 @@ n
 2
 
 
-a
-1
 w
 q" | fdisk "/dev/$driveName"
 
