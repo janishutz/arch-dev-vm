@@ -47,7 +47,6 @@ sleep 2
 umount -R /mnt
 
 wipefs -a "/dev/$driveName"
-sleep 2
 echo -e "
 g
 n
@@ -75,7 +74,7 @@ mount "/dev/${driveName}2" /mnt
 mkdir /mnt/boot
 mount "/dev/${driveName}1" /mnt/boot
 
-pacstrap -Kc /mnt base linux-zen linux-firmware nano networkmanager efibootmgr grub man git xfce4 base-devel fish sudo gdm plymouth --noconfirm
+pacstrap -c -K /mnt base linux-zen linux-firmware nano networkmanager efibootmgr grub man git xfce4 base-devel fish sudo gdm plymouth --noconfirm
 
 
 echo "
