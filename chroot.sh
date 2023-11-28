@@ -4,7 +4,7 @@
 ln -sf /usr/share/zoneinfo/Europe/Zurich /etc/localtime
 
 cat /root/arch-dev-vm/drive
-driveName=${cat /root/arch-dev-vm/drive}
+driveName=$(cat /root/arch-dev-vm/drive)
 echo $driveName
 
 hwclock --systohc
@@ -31,7 +31,7 @@ sleep 2
 # TODO: plymouth-set-default-theme -R script
 
 # Test boot mode (if efi or csm)
-bootMode=${cat /sys/firmware/efi/fw_platform_size}
+bootMode=$(cat /sys/firmware/efi/fw_platform_size)
 
 # Install grub (bootloader)
 if [["$bootMode" == '64' ]]; then
