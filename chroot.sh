@@ -1,15 +1,17 @@
 # This file will be executed automatically once in chroot
 
+# Set time zone
 ln -sf /usr/share/zoneinfo/Europe/Zurich /etc/localtime
-
-cp /root/arch-dev-vm/locale.gen /etc/locale.gen
-
-hwclock --systohc
 
 driveName=cat /root/arch-dev-vm/drive
 
+hwclock --systohc
+
+# Generate locales
+cp /root/arch-dev-vm/locale.gen /etc/locale.gen
 locale-gen
 
+# Configure locale, kb layout & hostname
 echo "LANG=en_GB.UTF-8" > /etc/locale.conf
 echo "KEYMAP=de_CH-latin1" > /etc/vconsole.conf
 echo "arch-dev-vm" > /etc/hostname
@@ -22,14 +24,15 @@ echo "
 
 sleep 2
 
-# mkinitcpio -P
-plymouth-set-default-theme -R script
+# Copy mkinitcpio config over to enable plymouth
+# cp /root/arch-dev-vm/mkinitcpio.conf /etc/mkinitcpio.conf
+# TODO: plymouth-set-default-theme -R script
 
 # Test boot mode (if efi or csm)
-
 bootMode=cat /sys/firmware/efi/fw_platform_size
 
-if ["$bootMode" == '64' ]; then
+# Install grub (bootloader)
+if [["$bootMode" == '64' ]]; then
     echo "
     
     ==> Detected EFI boot mode. Setting up accordingly.
@@ -61,6 +64,7 @@ echo "
 
 read -p "Choose a password: " pwd
 
+# Create users
 useradd -m arch-is-best
 passwd arch-is-best << EOD
 ${pwd}
@@ -86,8 +90,8 @@ to finish up setup
 
 "
 
+# Head into userland with userland.sh script
 chmod 777 /home/arch-is-best/arch-dev-vm/vscode-extensions
-
 su arch-is-best -c /home/arch-is-best/arch-dev-vm/userland.sh
 
 

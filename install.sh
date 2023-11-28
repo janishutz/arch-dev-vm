@@ -16,6 +16,8 @@ for you.
 This script doesn't check for EFI compatibility yet
 
 "
+
+# List all drives connected
 lsblk
 
 echo "
@@ -47,12 +49,14 @@ echo "
 "
 sleep 2
 
+# Unmount and wipe selected drive
 umount -R /mnt
 
 wipefs -a "/dev/$driveName"
 
 sleep 2
 
+# Format disk using fstab
 echo -e "
 g
 n
@@ -79,6 +83,7 @@ echo "
 
 "
 
+# Format & sync time
 timedatectl
 
 echo "y\n" | mkfs.ext4 "/dev/${driveName}3"
@@ -87,6 +92,8 @@ mount "/dev/${driveName}3" /mnt
 mkdir /mnt/boot
 mount "/dev/${driveName}2" /mnt/boot
 
+
+# Install packages
 pacstrap -K /mnt base linux-zen linux-firmware nano networkmanager efibootmgr grub man git xfce4 base-devel fish sudo gdm plymouth neovim --noconfirm
 
 
