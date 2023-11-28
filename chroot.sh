@@ -49,7 +49,7 @@ usermod -aG wheel arch-is-best
 
 rm -rf /home/arch-is-best/arch-dev-vm
 mkdir --parent /home/arch-is-best/arch-dev-vm
-mv /root/arch-dev-vm/* /home/arch-is-best/arch-dev-vm
+mv /root/arch-dev-vm /home/arch-is-best/arch-dev-vm
 
 echo "
 
