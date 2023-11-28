@@ -47,6 +47,9 @@ sleep 2
 umount -R /mnt
 
 wipefs -a "/dev/$driveName"
+
+sleep 2
+
 echo -e "
 g
 n
@@ -96,7 +99,7 @@ echo "
 sleep 2
 
 mkdir /mnt/root
-cp -r ~/arch-dev-vm /mnt/root/arch-dev-vm/
+cp -rv ~/arch-dev-vm /mnt/root/arch-dev-vm/
 
 arch-chroot /mnt /root/arch-dev-vm/chroot.sh
 
