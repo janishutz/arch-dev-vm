@@ -30,9 +30,19 @@ plymouth-set-default-theme -R script
 bootMode=cat /sys/firmware/efi/fw_platform_size
 
 if ["$bootMode" == '64' ]; then
+    echo "
+    
+    ==> Detected EFI boot mode. Setting up accordingly.
+    
+    "
     mkdir /boot/EFI
     grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=ARCH
 else
+    echo "
+    
+    ==> Detected CSM / BIOS boot mode. Setting up accordingly.
+    
+    "
     grub-install --target=i386-pc "/dev/${driveName}"
 fi
 grub-mkconfig -o /boot/grub/grub.cfg
