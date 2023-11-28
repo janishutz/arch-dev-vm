@@ -55,11 +55,18 @@ g
 n
 1
 
-+256M
++1M
 n
 2
 
++256M
+n
+3
 
+
+t
+1
+4
 w
 q" | fdisk "/dev/$driveName"
 
@@ -71,12 +78,12 @@ echo "
 
 timedatectl
 
-echo "y\n" | mkfs.ext4 "/dev/${driveName}2"
-echo "y\n" | mkfs.fat -F 32 "/dev/${driveName}1"
-mount "/dev/${driveName}2" /mnt
+echo "y\n" | mkfs.ext4 "/dev/${driveName}3"
+echo "y\n" | mkfs.fat -F 32 "/dev/${driveName}2"
+mount "/dev/${driveName}3" /mnt
 mkdir /mnt/boot
 mkdir /mnt/boot/EFI
-mount "/dev/${driveName}1" /mnt/boot
+mount "/dev/${driveName}2" /mnt/boot
 
 pacstrap -K /mnt base linux-zen linux-firmware nano networkmanager efibootmgr grub man git xfce4 base-devel fish sudo gdm plymouth neovim --noconfirm
 
