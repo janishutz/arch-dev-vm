@@ -107,7 +107,7 @@ if [[ "$installType" == "c" ]]; then
     pacman -Syu --noconfirm nodejs npm rustup kate python-pip gcc
 fi
 
-pacman -Syu --noconfirm vscodium
+pacman -Syu --noconfirm vscodium terminator firefox
 
 chmod -R 777 /home/arch-is-best/arch-dev-vm/config
 
