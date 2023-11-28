@@ -28,6 +28,11 @@ sleep 2
 cp /root/arch-dev-vm/mkinitcpio.conf /etc/mkinitcpio.conf
 plymouth-set-default-theme -R script
 
+
+# set up arch4edu
+curl -O https://mirrors.tuna.tsinghua.edu.cn/arch4edu/any/arch4edu-keyring-20200805-1-any.pkg.tar.zst
+pacman -U arch4edu-keyring-20200805-1-any.pkg.tar.zst
+
 # Test boot mode (if efi or csm)
 bootMode=$(cat /sys/firmware/efi/fw_platform_size)
 
@@ -96,7 +101,7 @@ sleep 2
 # Add additional packages
 read -p "Do you want to have a barebone (b) or complete (c) install? " installType
 
-if [[ "$installType" != "c" ]]; then
+if [[ "$installType" == "c" ]]; then
     pacman -Syu --noconfirm nodejs npm rustup kate python-pip gcc
 fi
 
