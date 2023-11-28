@@ -41,6 +41,7 @@ fi
 
 # Save drive name for future use
 echo "${driveName}" > ~/arch-dev-vm/drive
+chmod 777 ~/arch-dev-vm/drive
 
 echo "
 

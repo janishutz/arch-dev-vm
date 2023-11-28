@@ -4,6 +4,7 @@
 ln -sf /usr/share/zoneinfo/Europe/Zurich /etc/localtime
 
 driveName=cat /root/arch-dev-vm/drive
+echo $driveName
 
 hwclock --systohc
 
