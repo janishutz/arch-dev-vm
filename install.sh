@@ -121,7 +121,7 @@ echo "
 ----------------------------------------------------------------
 
 DONE!
-Congratulations, you now have a fully set up linux VM.
+Congratulations, you now have a fully set up ArchLinux VM.
 
 "
 

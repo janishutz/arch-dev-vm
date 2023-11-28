@@ -31,7 +31,9 @@ On a live-booted archlinux installer, run the following commands
     ./install.sh
 ```
 
-and follow the on-screen prompts
+and follow the on-screen prompts. 
+
+**NOTE: The keyboard layout by default is en_US-latin1**
 
 ## Editing the sudoers file
 In the sudoers file, you need to uncomment the 15th line from the botton, just below the line that says
