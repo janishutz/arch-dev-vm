@@ -37,6 +37,9 @@ if [[ "$doProceed" != "y" ]]; then
     exit 0
 fi
 
+# Save drive name for future use
+echo "${driveName}" > ~/arch-dev-vm/drive
+
 echo "
 
 ==> Please stand by as we install your OS.
@@ -82,7 +85,6 @@ echo "y\n" | mkfs.ext4 "/dev/${driveName}3"
 echo "y\n" | mkfs.fat -F 32 "/dev/${driveName}2"
 mount "/dev/${driveName}3" /mnt
 mkdir /mnt/boot
-mkdir /mnt/boot/EFI
 mount "/dev/${driveName}2" /mnt/boot
 
 pacstrap -K /mnt base linux-zen linux-firmware nano networkmanager efibootmgr grub man git xfce4 base-devel fish sudo gdm plymouth neovim --noconfirm

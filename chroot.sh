@@ -6,6 +6,8 @@ cp /root/arch-dev-vm/locale.gen /etc/locale.gen
 
 hwclock --systohc
 
+driveName=cat /root/arch-dev-vm/drive
+
 locale-gen
 
 echo "LANG=en_GB.UTF-8" > /etc/locale.conf
@@ -23,7 +25,16 @@ sleep 2
 mkinitcpio -P
 plymouth-set-default-theme -R script
 
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=ARCH
+# Test boot mode (if efi or csm)
+
+bootMode=cat /sys/firmware/efi/fw_platform_size
+
+if ["$bootMode" == '64' ]; then
+    mkdir /boot/EFI
+    grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=ARCH
+else
+    grub-install --target=i386-pc "/dev/${driveName}"
+fi
 grub-mkconfig -o /boot/grub/grub.cfg
 
 echo "
