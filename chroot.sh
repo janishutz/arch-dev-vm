@@ -80,7 +80,7 @@ mkdir --parent /home/arch-is-best/arch-dev-vm
 ls /root/arch-dev-vm
 
 
-mv -v /root/arch-dev-vm /home/arch-is-best/arch-dev-vm
+mv -v /root/arch-dev-vm /home/arch-is-best/
 
 sleep 2
 

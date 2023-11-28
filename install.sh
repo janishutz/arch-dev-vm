@@ -12,9 +12,6 @@ Welcome to arch-dev-vm installation.
 This installation script will automatically create a full ArchLinux Development Setup for VMs
 for you. 
 
-==> PLEASE MAKE SURE TO HAVE UEFI CONFIGURED FOR YOUR VM! 
-This script doesn't check for EFI compatibility yet
-
 "
 
 # List all drives connected
