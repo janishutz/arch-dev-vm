@@ -3,7 +3,6 @@
 # Set time zone
 ln -sf /usr/share/zoneinfo/Europe/Zurich /etc/localtime
 
-cat /root/arch-dev-vm/drive
 driveName=$(cat /root/arch-dev-vm/drive)
 
 hwclock --systohc
@@ -74,6 +73,9 @@ EOD
 usermod -aG wheel arch-is-best
 
 rm -rfv /home/arch-is-best/arch-dev-vm
+
+sleep 3
+
 mkdir --parent /home/arch-is-best/arch-dev-vm
 ls /root/arch-dev-vm
 
