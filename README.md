@@ -23,7 +23,7 @@ On a live-booted archlinux installer, run the following commands
 
 ```
     ls /usr/share/kbd/keymaps/**/*.map.gz
-    loadkeys [IDENTIFIER HERE (find it in the output above)]
+    loadkeys [IDENTIFIER HERE (find it in the output above), usually of form de_CH-latin1, refer to blog for more instructions]
     pacman-key --init
     pacman -Sy git
     git clone https://github.com/simplePCBuilding/arch-dev-vm
