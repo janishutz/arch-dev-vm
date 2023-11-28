@@ -49,7 +49,12 @@ usermod -aG wheel arch-is-best
 
 rm -rfv /home/arch-is-best/arch-dev-vm
 mkdir --parent /home/arch-is-best/arch-dev-vm
+ls /root/arch-dev-vm
+
+
 mv -v /root/arch-dev-vm /home/arch-is-best/arch-dev-vm
+
+sleep 2
 
 ls /home/arch-is-best/arch-dev-vm
 
@@ -85,7 +90,7 @@ Now, once you are ready, press enter to open the file
 
 "
 
-visudo
+EDITOR=nano visudo
 
 systemctl enable gdm.service
 

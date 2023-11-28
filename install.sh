@@ -75,9 +75,10 @@ echo "y\n" | mkfs.ext4 "/dev/${driveName}2"
 echo "y\n" | mkfs.fat -F 32 "/dev/${driveName}1"
 mount "/dev/${driveName}2" /mnt
 mkdir /mnt/boot
+mkdir /mnt/boot/EFI
 mount "/dev/${driveName}1" /mnt/boot
 
-pacstrap -K /mnt base linux-zen linux-firmware nano networkmanager efibootmgr grub man git xfce4 base-devel fish sudo gdm plymouth --noconfirm
+pacstrap -K /mnt base linux-zen linux-firmware nano networkmanager efibootmgr grub man git xfce4 base-devel fish sudo gdm plymouth neovim --noconfirm
 
 
 echo "
