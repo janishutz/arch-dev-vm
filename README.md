@@ -1,10 +1,15 @@
 # Arch-Dev-VM
 
-This repo contains scripts to install a full Archlinux with Xfce install complete with the following additional packages:
+This repo contains scripts to install a full Archlinux System with Xfce complete with the following additional packages:
 - VSCodium (with custom settings)
-- pip
-- node & npm
-- neovim & nano
+- GDM (Gnome Display Manager)
+- AUR helper YAY
+- pip (optional)
+- node & npm (optional)
+- rustup (optional)
+- neovim & nano 
+
+You also get a fully configured Sudo user
 
 # IMPORTANT: PLEASE ONLY INSTALL ON A VM OR ON A DEVICE WITH NO ADDITIONAL DATA ON IT YOU'D LIKE TO KEEP
 
@@ -29,3 +34,5 @@ On a live-booted archlinux installer, run the following commands
 and follow the on-screen prompts
 
 ## Editing the sudoers file
+In the sudoers file, you need to uncomment the 15th line from the botton, just below the line that says
+""
