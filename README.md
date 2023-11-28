@@ -35,4 +35,7 @@ and follow the on-screen prompts
 
 ## Editing the sudoers file
 In the sudoers file, you need to uncomment the 15th line from the botton, just below the line that says
-""
+"## Uncomment to allow members of group wheel to execute any command"
+
+Remove the # in the subsequent line and hit Ctrl + S, then Ctrl + X. This will allow all members
+of the user group "wheel" to execute any command. 
