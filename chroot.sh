@@ -54,10 +54,6 @@ echo "
 
 ==> Bootloader set up.
 
-"
-
-echo "
-
 ==> Creating new user, please choose a password once prompted!
 
 "
@@ -66,6 +62,7 @@ read -p "Choose a password: " pwd
 
 # Create users
 useradd -m arch-is-best
+sleep 2
 passwd arch-is-best << EOD
 ${pwd}
 ${pwd}
@@ -80,6 +77,7 @@ mkdir --parent /home/arch-is-best/arch-dev-vm
 ls /root/arch-dev-vm
 
 
+# Prepare for switching to new user
 mv -v /root/arch-dev-vm /home/arch-is-best/
 
 sleep 2
@@ -93,11 +91,26 @@ to finish up setup
 
 "
 
-# Head into userland with userland.sh script
+sleep 2
+
+# Add additional packages
+read -p "Do you want to have a barebone (b) or complete (c) install? " installType
+
+if [[ "$installType" != "c" ]]; then
+    pacman -Syu --noconfirm nodejs npm rustup kate python-pip gcc
+fi
+
+pacman -Syu --noconfirm vscodium
+
+chmod -R 777 /home/arch-is-best/arch-dev-vm/config
+
+
+# Head into userland with userland.sh script (run all operations requiring root before!)
 chmod 777 /home/arch-is-best/arch-dev-vm/vscode-extensions
 su arch-is-best -c /home/arch-is-best/arch-dev-vm/userland.sh
 
 
+sleep 2
 
 echo "
 
