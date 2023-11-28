@@ -8,22 +8,18 @@ echo "
 
 read -p "Please enter your password again: " pwd
 
-echo "
-
-==> AUR helper installed
-
-"
-
 read -p "Do you want to have a barebone (b) or complete (c) install? " installType
 
 if [[ "$installType" != "c" ]]; then
-    pacman -Syu --noconfirm nodejs npm rustup kate python-pip gcc
+    echo $pwd | sudo -S pacman -Syu --noconfirm nodejs npm rustup kate python-pip gcc
 fi
 
-pacman -Syu --noconfirm vscodium
+echo $pwd | sudo -S pacman -Syu --noconfirm vscodium
 
 
 mkdir /home/arch-is-best/.config
+
+echo $pwd | sudo -S chmod -R 777 /home/arch-is-best/arch-dev-vm/config
 
 mv /home/arch-is-best/arch-dev-vm/config/* /home/arch-is-best/.config
 
