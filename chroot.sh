@@ -25,8 +25,8 @@ echo "
 sleep 2
 
 # Copy mkinitcpio config over to enable plymouth
-# cp /root/arch-dev-vm/mkinitcpio.conf /etc/mkinitcpio.conf
-# TODO: plymouth-set-default-theme -R script
+cp /root/arch-dev-vm/mkinitcpio.conf /etc/mkinitcpio.conf
+plymouth-set-default-theme -R script
 
 # Test boot mode (if efi or csm)
 bootMode=$(cat /sys/firmware/efi/fw_platform_size)
