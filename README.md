@@ -1,6 +1,6 @@
 # Arch-Dev-VM
 
-This repo contains scripts to install a full Archlinux System with Xfce complete with the following additional packages:
+This repo contains scripts to install a full Archlinux System with GNOME complete with the following additional packages:
 - VSCodium (with custom settings)
 - GDM (Gnome Display Manager)
 - pip (optional)

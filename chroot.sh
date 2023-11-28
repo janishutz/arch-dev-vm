@@ -143,6 +143,7 @@ read
 EDITOR=nano visudo
 
 systemctl enable gdm.service
+systemctl enable NetworkManager.service
 
 
 exit

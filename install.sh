@@ -92,7 +92,7 @@ mount "/dev/${driveName}2" /mnt/boot
 
 
 # Install packages
-pacstrap -K /mnt base linux-zen linux-firmware nano networkmanager efibootmgr grub man git xfce4 base-devel fish sudo gdm plymouth neovim --noconfirm
+pacstrap -K /mnt base linux-zen linux-firmware nano networkmanager efibootmgr grub man git gnome base-devel fish sudo gdm plymouth neovim --noconfirm
 
 
 echo "
