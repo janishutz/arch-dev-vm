@@ -3,6 +3,7 @@
 # Set time zone
 ln -sf /usr/share/zoneinfo/Europe/Zurich /etc/localtime
 
+cat /root/arch-dev-vm/drive
 driveName=cat /root/arch-dev-vm/drive
 echo $driveName
 
