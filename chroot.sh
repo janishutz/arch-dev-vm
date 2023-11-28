@@ -5,7 +5,6 @@ ln -sf /usr/share/zoneinfo/Europe/Zurich /etc/localtime
 
 cat /root/arch-dev-vm/drive
 driveName=$(cat /root/arch-dev-vm/drive)
-echo $driveName
 
 hwclock --systohc
 
@@ -34,7 +33,7 @@ sleep 2
 bootMode=$(cat /sys/firmware/efi/fw_platform_size)
 
 # Install grub (bootloader)
-if [["$bootMode" == '64' ]]; then
+if [[ "$bootMode" == "64" ]]; then
     echo "
     
     ==> Detected EFI boot mode. Setting up accordingly.
@@ -116,6 +115,8 @@ This is on line 15 from the bottom usually.
 Now, once you are ready, press enter to open the file
 
 "
+
+read
 
 EDITOR=nano visudo
 
