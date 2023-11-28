@@ -3,7 +3,6 @@
 This repo contains scripts to install a full Archlinux System with Xfce complete with the following additional packages:
 - VSCodium (with custom settings)
 - GDM (Gnome Display Manager)
-- AUR helper YAY
 - pip (optional)
 - node & npm (optional)
 - rustup (optional)
@@ -41,3 +40,14 @@ In the sudoers file, you need to uncomment the 15th line from the botton, just b
 
 Remove the # in the subsequent line and hit Ctrl + S, then Ctrl + X. This will allow all members
 of the user group "wheel" to execute any command. 
+
+
+## Post install
+After install, you might want to install an AUR-Helper, like yay (yet another yogurt). Run the following commands after rebooting your system.
+
+```
+    cd /tmp
+    git clone https://aur.archlinux.org/yay.git
+    cd yay
+    makepkg -si
+```

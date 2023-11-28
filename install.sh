@@ -105,6 +105,8 @@ sleep 2
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
+cp ~/arch-dev-vm/pacman.conf /mnt/etc/pacman.conf
+
 echo "
 
 ==> Entering chroot
@@ -140,6 +142,9 @@ echo "
 
 DONE!
 Congratulations, you now have a fully set up ArchLinux VM.
+
+If you want to have a AUR helper, please read on in the readme file or
+in my blog post
 
 "
 

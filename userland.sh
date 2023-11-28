@@ -6,10 +6,7 @@ echo "
 
 "
 
-cd /tmp
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
+read -p "Please enter your password again: " pwd
 
 echo "
 
@@ -20,10 +17,10 @@ echo "
 read -p "Do you want to have a barebone (b) or complete (c) install? " installType
 
 if [[ "$installType" != "c" ]]; then
-    yay -Syu --noconfirm nodejs npm rustup kate python-pip gcc
+    pacman -Syu --noconfirm nodejs npm rustup kate python-pip gcc
 fi
 
-yay -Syu --noconfirm vscodium
+pacman -Syu --noconfirm vscodium
 
 
 mkdir /home/arch-is-best/.config
