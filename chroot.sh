@@ -22,7 +22,7 @@ echo "
 
 sleep 2
 
-mkinitcpio -P
+# mkinitcpio -P
 plymouth-set-default-theme -R script
 
 # Test boot mode (if efi or csm)
