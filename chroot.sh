@@ -31,7 +31,9 @@ plymouth-set-default-theme -R script
 
 # set up arch4edu
 curl -O https://mirrors.tuna.tsinghua.edu.cn/arch4edu/any/arch4edu-keyring-20200805-1-any.pkg.tar.zst
-pacman -U arch4edu-keyring-20200805-1-any.pkg.tar.zst
+pacman -U arch4edu-keyring-20200805-1-any.pkg.tar.zst --noconfirm
+
+# FUTURE: Add sha256sum verification
 
 # Test boot mode (if efi or csm)
 bootMode=$(cat /sys/firmware/efi/fw_platform_size)
