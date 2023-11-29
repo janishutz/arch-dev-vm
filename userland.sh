@@ -10,7 +10,7 @@ mkdir /home/arch-is-best/.config
 
 mv /home/arch-is-best/arch-dev-vm/config/* /home/arch-is-best/.config
 
-file="/home/arch-is-best/vscode-extensions"
+file="/home/arch-is-best/arch-dev-vm/vscode-extensions"
 while read line; do
     vscodium --install-extension "${line}"
 done < "${file}"
