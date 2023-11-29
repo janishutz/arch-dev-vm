@@ -18,19 +18,22 @@ First, [download](https://archlinux.org/download/) an ArchLinux ISO (scroll down
 
 Then, set up a VM using for example VMWare Workstation Player 16
 
-On a live-booted archlinux installer, run the following commands
+On a live-booted archlinux installer, run the following commands (read on below as well!):
 
 ```
-    ls /usr/share/kbd/keymaps/**/*.map.gz
-    loadkeys [IDENTIFIER HERE (find it in the output above), usually of form de_CH-latin1, refer to blog for more instructions]
-    pacman-key --init
-    pacman -Sy git
-    git clone https://github.com/simplePCBuilding/arch-dev-vm
-    cd arch-dev-vm
-    ./install.sh
+pacman -Sy git
+git clone https://github.com/simplePCBuilding/arch-dev-vm
+cd arch-dev-vm
+./install.sh
 ```
 
 and follow the on-screen prompts. 
+
+If the keyboard layout isn't correct run the following commands:
+```
+ls /usr/share/kbd/keymaps/**/*.map.gz
+loadkeys [IDENTIFIER HERE (find it in the output above), usually of form de_CH-latin1, refer to blog for more instructions]
+```
 
 **NOTE: The keyboard layout by default is en_US-latin1**
 
@@ -46,8 +49,8 @@ of the user group "wheel" to execute any command.
 After install, you might want to install an AUR-Helper, like yay (yet another yogurt). Run the following commands after rebooting your system.
 
 ```
-    cd /tmp
-    git clone https://aur.archlinux.org/yay.git
-    cd yay
-    makepkg -si
+cd /tmp
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
 ```
