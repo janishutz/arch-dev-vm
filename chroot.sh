@@ -57,9 +57,15 @@ else
 fi
 grub-mkconfig -o /boot/grub/grub.cfg
 
+cd /tmp
+git clone https://github.com/sandesh236/monterey-grub-theme
+
+cd monterey-grub-theme/
+./install.sh
+
 echo "
 
-==> Bootloader set up.
+==> Bootloader set up (including custom theme).
 
 ==> Creating new user, please choose a password once prompted!
 
