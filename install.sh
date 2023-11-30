@@ -93,7 +93,7 @@ mount "/dev/${driveName}2" /mnt/boot
 
 # Install packages
 # TODO: Consider adding all required gnome-packages manually to reduce install size
-pacstrap -K /mnt base linux-zen linux-firmware nano networkmanager efibootmgr grub man git gnome base-devel fish sudo gdm plymouth neovim --noconfirm
+pacstrap -K /mnt base linux-zen linux-firmware nano networkmanager efibootmgr grub man git gnome base-devel fish sudo gdm plymouth neovim gnome-tweaks --noconfirm
 
 
 echo "
