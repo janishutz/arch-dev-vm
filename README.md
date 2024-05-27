@@ -14,6 +14,8 @@ You also get a fully configured Sudo user
 
 
 # Running
+There is a full, written guide available on my [blog](https://blog.janishutz.com/posts/2023/11/easy-ml-linux-vm-setup/).
+
 First, [download](https://archlinux.org/download/) an ArchLinux ISO (scroll down to mirrors).
 
 Then, set up a VM using for example VMWare Workstation Player 16
