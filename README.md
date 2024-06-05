@@ -1,5 +1,9 @@
 # Arch-Dev-VM
 
+<div id="donate" align="center">
+    <a href="https://store.janishutz.com/donate" target="_blank"><img src="https://store-cdn.janishutz.com/static/support-me.jpg" width="150px"></a>
+</div>
+
 This repo contains scripts to install a full Archlinux System with GNOME complete with the following additional packages:
 - VSCodium (with custom settings)
 - GDM (Gnome Display Manager)
@@ -56,3 +60,7 @@ git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 ```
+
+<div id="donate" align="center">
+    <a href="https://store.janishutz.com/donate" target="_blank"><img src="https://store-cdn.janishutz.com/static/support-me.jpg" width="150px"></a>
+</div>
